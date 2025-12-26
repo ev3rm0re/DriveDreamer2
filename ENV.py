@@ -21,13 +21,14 @@ def init_paths(base_dir=None, project_name=None):
         else:
             os.environ['PYTHONPATH'] = python_path
             
-    os.environ['TORCH_HOME'] = '/mnt/pfs/models/torch/'
-    os.environ['TRANSFORMERS_CACHE'] = '/mnt/pfs/models/huggingface/'
-    os.environ['HUGGINGFACE_HUB_CACHE'] = '/mnt/pfs/models/huggingface/'
-    os.environ['XDG_CACHE_HOME'] = '/mnt/pfs/models/xdg/'
+    os.environ['TORCH_HOME'] = '/DriveDreamer2/models/torch/'
+    os.environ['TRANSFORMERS_CACHE'] = '/DriveDreamer2/models/huggingface/'
+    os.environ['HUGGINGFACE_HUB_CACHE'] = '/DriveDreamer2/models/huggingface/'
+    os.environ['XDG_CACHE_HOME'] = '/DriveDreamer2/models/xdg/'
         
     # For users with huggingface network issues, uncomment the following lines for speedding up downloading
-    # os.environ['HF_ENDPOINT'] = 'https://hf-mirror.com'
+    os.environ["HF_TOKEN"] = ''
+    os.environ['HF_ENDPOINT'] = 'https://hf-mirror.com'
     
     # uncomment the following lines if you have already downloaded huggingface models, and you want set up offline mode (use the local models)
     # os.environ['HF_HUB_OFFLINE'] = '1'

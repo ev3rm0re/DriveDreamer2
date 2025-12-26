@@ -1,14 +1,14 @@
 import os
 # ============= PATH ===================
 proj_name = os.path.basename(__file__)[:-3]
-exp_dir = '/mnt/data-2/users/zhaoguosheng/1-code/16-drivedreamer2_release/exp'  # PATH TO YOUR EXPERIMENT FOLDER
+exp_dir = '/DriveDreamer2/exp'  # PATH TO YOUR EXPERIMENT FOLDER
 project_dir = os.path.join(exp_dir, proj_name)
-train_data = '/mnt/pfs/datasets/giga_datasets/public_data/nuscenes/v1.0-trainval/cam_all_train/v0.0.2'
-test_data = '/mnt/pfs/datasets/giga_datasets/public_data/nuscenes/v1.0-trainval/cam_all_val/v0.0.2'
-embed_map_path = '/mnt/pfs/datasets/giga_datasets/public_data/nuscenes/clip_text_transform_after_pool_panoramic.pkl'
+train_data = '/DriveDreamer2/dreamer-data/v1.0-mini/cam_all_train/v0.0.2'
+test_data = '/DriveDreamer2/dreamer-data/v1.0-mini/cam_all_val/v0.0.2'
+embed_map_path = '/DriveDreamer2/dreamer-data/clip_text_transform_after_pool_panoramic.pkl'
 
-weight_path = '/mnt/data-2/users/zhaoguosheng/1-code/16-drivedreamer2_release/pretrained_models/drivedreamer2_img_cond/pytorch_gligen_weights.bin' # PATH TO YOUR MODEL  set None to load the latest checkpoint in your project_dir
-save_path = '/mnt/data-2/users/zhaoguosheng/1-code/16-drivedreamer2_release/output/v1.0-trainval/drivedreamer2_img_cond' # PATH FOR SAVING GENERATED VIDEO
+weight_path = '/DriveDreamer2/pretrained_models/drivedreamer2_img_cond/pytorch_gligen_weights.bin' # PATH TO YOUR MODEL  set None to load the latest checkpoint in your project_dir
+save_path = '/DriveDreamer2/output/drivedreamer2_img_cond'
 
 # ============= Data Parameters =================
 resolution=(256, 448)
@@ -89,8 +89,8 @@ config = dict(
         ),
     ),
     models=dict(
-        pretrained='/mnt/pfs/models/huggingface/models--stabilityai--stable-video-diffusion-img2vid-xt-1-1',
-        text_encoder_pretrained='cerspense/zeroscope_v2_576w',
+        pretrained='stabilityai/stable-video-diffusion-img2vid-xt-1-1',
+        text_encoder_pretrained='/DriveDreamer2/models/huggingface/zeroscope_v2_576w',
         # checkpoint='PATH/TO/YOUR/CHECKPOINT', # resume training
         weight_path=weight_path,
         mode = mode,

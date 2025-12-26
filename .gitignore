@@ -1,3 +1,9 @@
 
 *.pkl
+*.pyc
 /pretrained_models
+data/*
+dreamer-data/*
+output/*
+models/*
+exp/*
